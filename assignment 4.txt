@@ -1,0 +1,17 @@
+class MyException(Exception):
+    def __init__(self,v):
+        self.v=v
+    def __str__(self):
+        return self.v
+def xyz(a,b):
+    a=int(a)
+    b=int(b)
+    s=a+b
+    try:
+        if(s<150):
+            raise MyException
+        else:
+            return s
+    except MyException:
+        print("Custum Exception Occured")
+xyz(input(),input())
